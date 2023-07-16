@@ -13,7 +13,7 @@ public class PixelsManager : MonoBehaviour
 
     private void Start()
     {
-       Invoke(nameof( MakeImage),.5f);
+       Invoke(nameof( MakeImage),.1f);
     }
     private void MakeImage()
     {

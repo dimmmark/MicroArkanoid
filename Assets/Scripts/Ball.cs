@@ -53,7 +53,6 @@ public class Ball : MonoBehaviour
             _vectorAtract = collision.GetContact(0).normal.normalized;
             _vectorAtract.x = Mathf.Round(_vectorAtract.x);
             _vectorAtract.y = Mathf.Round(_vectorAtract.y);
-            Debug.Log(_vectorAtract);
             if (_vectorAtract.x == 0)
             {
                 _direction.y = -_direction.y;
