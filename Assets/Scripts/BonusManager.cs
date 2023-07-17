@@ -5,7 +5,8 @@ public class BonusManager : MonoBehaviour
     [SerializeField] private Bonus[] _bonusArray;
     [SerializeField] private Platform _platform;
     [SerializeField] private GameObject _safeLine;
-    [SerializeField] private float _timer;
+    [SerializeField] private float _safeLineTimer;
+    //[SerializeField] private float _expandPlatformTimer;
     private bool _isOn;
     void Start()
     {
@@ -13,9 +14,9 @@ public class BonusManager : MonoBehaviour
     }
     private void Update()
     {
-        if (_timer > 0 && _isOn)
+        if (_safeLineTimer > 0 && _isOn)
         {
-        _timer -= Time.deltaTime;
+        _safeLineTimer -= Time.deltaTime;
             _safeLine.SetActive(true);
         }
         else
@@ -26,24 +27,22 @@ public class BonusManager : MonoBehaviour
     }
     private void SpawnBall()
     {
-        Instantiate(_bonusArray[2], new Vector3(Random.Range(-24, 24), 46.5f, 0), Quaternion.identity);
+        Instantiate(_bonusArray[3], new Vector3(Random.Range(-24, 24), 46.5f, 0), Quaternion.identity);
 
     }
     private void SetSafeLine()
     {
-       // _timer = 0;
-        _timer += 7.5f;
+        _safeLineTimer += 7.5f;
         _isOn = true;
-        //_safeLine.SetActive(true);
-        //Invoke(nameof(OffSafeLine), 7.5f);
     }
-    //private void OffSafeLine()
+    //private void ExpandPlatform()
     //{
-    //    _safeLine.SetActive(false);
+    //    _platform.transform.localScale.x 
     //}
     private void OnEnable()
     {
         BonusSafeLine.OnBonusSafeLine += SetSafeLine;
+       
     }
     private void OnDisable()
     {

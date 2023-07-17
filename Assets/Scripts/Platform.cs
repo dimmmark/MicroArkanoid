@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Platform : MonoBehaviour
@@ -23,5 +24,18 @@ public class Platform : MonoBehaviour
             _xPosition = Mathf.Clamp(_xPosition, -_maxXPosition, _maxXPosition);
             transform.position = new Vector3(_xPosition, transform.position.y, transform.position.z);
         }
+    }
+    public void ExpandPlatform()
+    {
+        transform.localScale = new Vector3(transform.localScale.x +.25f, 1, 1);
+    }
+    private void OnEnable()
+    {
+        BonusPlatform.OnBonusPlatform += ExpandPlatform;
+
+    }
+    private void OnDisable()
+    {
+        BonusPlatform.OnBonusPlatform -= ExpandPlatform;
     }
 }

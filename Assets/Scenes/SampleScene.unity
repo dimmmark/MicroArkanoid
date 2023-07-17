@@ -1039,8 +1039,10 @@ MonoBehaviour:
   - {fileID: -257186648836062674, guid: c8390d6809ae0a44392609662c530ca5, type: 3}
   - {fileID: -3734579457746205080, guid: 0dfda829b1d84ed4dafe810b52ba20b0, type: 3}
   - {fileID: 6430894519965872228, guid: aa9fe0b9812bda645826d3d98029ad8a, type: 3}
+  - {fileID: 7415982459696601995, guid: 6b8bee87a46bca44b9c1c7baec9f1190, type: 3}
   _platform: {fileID: 1883654446}
   _safeLine: {fileID: 1436602855}
+  _safeLineTimer: 0
 --- !u!4 &1491189323
 Transform:
   m_ObjectHideFlags: 0
@@ -1134,8 +1136,8 @@ Transform:
   m_GameObject: {fileID: 1883654444}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -18.19, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1100282918}
   m_Father: {fileID: 0}
