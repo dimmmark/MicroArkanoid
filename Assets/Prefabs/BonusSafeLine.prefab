@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3245474122756003731}
   - component: {fileID: 8785327966735324066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6664080341292636048}
   - component: {fileID: 6135717283945656255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BonusSafeLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3776851205267707589}
   - component: {fileID: 3789132991175072369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Atlas (2)_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

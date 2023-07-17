@@ -11,21 +11,24 @@ public class Ball : MonoBehaviour
     private Rigidbody2D _rigidbody;
     public static event System.Action<Pixel> OnCollidedPixel;
     private Vector2 _vectorAtract;
-    private bool _isPlaying;
     private int _frames;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        if (Game.Instance.CurrentState == State.Playing)
+            LaunchBall();
     }
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && !_isPlaying)
-        {
-            LaunchBall();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0) && Game.Instance.CurrentState == State.Start)
+    //    {
+    //        LaunchBall();
+
+    //    }
+        
+    //}
 
     private void FixedUpdate()
     {
@@ -33,11 +36,10 @@ public class Ball : MonoBehaviour
         _rigidbody.MovePosition(transform.position + new Vector3(_direction.x, _direction.y, 0) * _speed * Time.deltaTime);
     }
 
-    private void LaunchBall()
+    public void LaunchBall()
     {
         float randomAngle = Random.Range(-15f, 15f);
         _direction = Quaternion.Euler(0f, 0f, randomAngle) * Vector2.up;
-        _isPlaying = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

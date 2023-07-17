@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3034086427055096595}
   - component: {fileID: 4179304294157144724}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8176618174038130847}
   - component: {fileID: 3496581615495528341}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Atlas (2)_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664240641449835022}
   - component: {fileID: 9137635386516892665}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BonusLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}

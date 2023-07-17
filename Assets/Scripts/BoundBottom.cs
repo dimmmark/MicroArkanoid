@@ -6,6 +6,7 @@ public class BoundBottom : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Game.Instance.RemoveOneBall(collision.GetComponent<Ball>());
         collision.gameObject.SetActive(false);
     }
 }

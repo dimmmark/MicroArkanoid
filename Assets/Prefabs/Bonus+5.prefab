@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8733351576108418191}
   - component: {fileID: 234590027719083763}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6071614649277594803}
   - component: {fileID: 7560195526555994270}
-  m_Layer: 0
+  - component: {fileID: -257186648836062674}
+  - component: {fileID: 8868984534561424613}
+  m_Layer: 8
   m_Name: Bonus+5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,12 +149,53 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-257186648836062674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338914718159779771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb5d2f3be9767d4299e427e6575754b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 8868984534561424613}
+  _speed: 10
+--- !u!50 &8868984534561424613
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5338914718159779771}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6174890368660845016
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5131601636888290950}
   - component: {fileID: 178031883151983404}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Atlas (2)_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
