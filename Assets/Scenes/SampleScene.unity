@@ -1038,6 +1038,9 @@ MonoBehaviour:
   _bonusArray:
   - {fileID: -257186648836062674, guid: c8390d6809ae0a44392609662c530ca5, type: 3}
   - {fileID: -3734579457746205080, guid: 0dfda829b1d84ed4dafe810b52ba20b0, type: 3}
+  - {fileID: 6430894519965872228, guid: aa9fe0b9812bda645826d3d98029ad8a, type: 3}
+  _platform: {fileID: 1883654446}
+  _safeLine: {fileID: 1436602855}
 --- !u!4 &1491189323
 Transform:
   m_ObjectHideFlags: 0
