@@ -7,10 +7,7 @@ public abstract class Bonus : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody;
     [SerializeField] private float _speed;
-    private void Start()
-    {
-       // _rigidbody = GetComponent<Rigidbody2D>();
-    }
+    
     private void FixedUpdate()
     {
         _rigidbody.MovePosition(transform.position + Vector3.down * _speed * Time.deltaTime );

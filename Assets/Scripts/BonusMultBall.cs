@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class BonusMultBall : MonoBehaviour
+public class BonusMultBall : Bonus
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void Activate()
     {
-        
-    }
+        base.Activate();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        Game.Instance.MultiplyBall();
+
+        Destroy(gameObject);
     }
 }

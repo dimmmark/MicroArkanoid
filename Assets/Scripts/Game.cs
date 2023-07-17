@@ -17,7 +17,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Platform _platform;
     [SerializeField] private Vector3 _offset;
     private Ball _startBall;
-    [SerializeField] private List<Ball> _ballsList = new List<Ball>();
+    public List<Ball> BallsList = new List<Ball>();
     private void Awake()
     {
         if (Instance == null)
@@ -34,13 +34,28 @@ public class Game : MonoBehaviour
     public void SetBall()
     {
        Ball newBall = Pooler.Instance.SpawnFromPool("Ball", _platform.transform.position + _offset, Quaternion.identity).GetComponent<Ball>();
-        _ballsList.Add(newBall);
+        BallsList.Add(newBall);
         if(CurrentState == State.Start)
             _startBall = newBall;
     }
+    public void MultiplyBall()
+    {
+        List<Ball> newBalls = new List<Ball>();
+
+        foreach (Ball ball in BallsList)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                Ball newBall = Pooler.Instance.SpawnFromPool("Ball", ball.transform.position, Quaternion.identity).GetComponent<Ball>();
+                newBalls.Add(newBall);
+            }
+        }
+
+        BallsList.AddRange(newBalls);
+    }
     public void RemoveOneBall(Ball ball)
     {
-        _ballsList.Remove(ball);
+        BallsList.Remove(ball);
     }
 
     private void Update()

@@ -474,6 +474,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad8b81d7b3fe57488262047dbc1c9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _platform: {fileID: 1883654446}
+  _offset: {x: 0, y: 1.2, z: 0}
+  BallsList: []
 --- !u!4 &826345740
 Transform:
   m_ObjectHideFlags: 0
@@ -828,6 +831,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1491189321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491189323}
+  - component: {fileID: 1491189322}
+  m_Layer: 0
+  m_Name: BonusManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1491189322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491189321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3456b43e6a373c94dac5ef7d4f5f8189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bonusArray:
+  - {fileID: -257186648836062674, guid: c8390d6809ae0a44392609662c530ca5, type: 3}
+  - {fileID: -3734579457746205080, guid: 0dfda829b1d84ed4dafe810b52ba20b0, type: 3}
+--- !u!4 &1491189323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491189321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1862669073
 GameObject:
   m_ObjectHideFlags: 0
