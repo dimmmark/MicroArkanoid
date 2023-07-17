@@ -10,7 +10,7 @@ public class PixelsManager : MonoBehaviour
     [SerializeField] float _distanceBetweenPixels;
     [SerializeField] List<Pixel> _pixelList = new List<Pixel>();
     private float _numberOfPixelsOnStart;
-
+    public static event System.Action OnEndPixels;
     private void Start()
     {
        Invoke(nameof( MakeImage),.1f);
@@ -39,6 +39,8 @@ public class PixelsManager : MonoBehaviour
     public void RemoveOnePixel(Pixel pixel)
     {
         _pixelList.Remove(pixel);
+        if(_pixelList.Count <= 0)
+            OnEndPixels?.Invoke();
     }
     private Texture2D GetTextureFromArray()
     {

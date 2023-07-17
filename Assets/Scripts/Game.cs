@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +17,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Vector3 _offset;
     private Ball _startBall;
     public List<Ball> BallsList = new List<Ball>();
+   // [SerializeField] private PixelsManager _pixelsManager;
     private void Awake()
     {
         if (Instance == null)
@@ -33,9 +33,9 @@ public class Game : MonoBehaviour
 
     public void SetBall()
     {
-       Ball newBall = Pooler.Instance.SpawnFromPool("Ball", _platform.transform.position + _offset, Quaternion.identity).GetComponent<Ball>();
+        Ball newBall = Pooler.Instance.SpawnFromPool("Ball", _platform.transform.position + _offset, Quaternion.identity).GetComponent<Ball>();
         BallsList.Add(newBall);
-        if(CurrentState == State.Start)
+        if (CurrentState == State.Start)
             _startBall = newBall;
     }
     public void MultiplyBall()
@@ -56,18 +56,19 @@ public class Game : MonoBehaviour
     public void RemoveOneBall(Ball ball)
     {
         BallsList.Remove(ball);
+        CheckLose();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)&& CurrentState == State.Start)
+        if (Input.GetMouseButtonDown(0) && CurrentState == State.Start)
         {
             OnPlayerInGame();
         }
 
         if (CurrentState == State.Playing)
         {
-          
+
         }
     }
     public State CurrentState { get; private set; }
@@ -87,17 +88,21 @@ public class Game : MonoBehaviour
     {
         CurrentState = State.Playing;
         Debug.Log(CurrentState.ToString());
-       if(_startBall)
+        if (_startBall)
             _startBall.LaunchBall();
 
     }
 
     public void OnPlayerWin()
     {
-            Debug.Log(CurrentState.ToString());
+        CurrentState = State.Win;
+        Time.timeScale = 0;
+        Debug.Log(CurrentState.ToString());
     }
     public void OnPlayerLose()
     {
+        CurrentState = State.Lose;
+        Time.timeScale = 0;
         Debug.Log(CurrentState.ToString());
     }
     public int LevelIndex
@@ -111,5 +116,18 @@ public class Game : MonoBehaviour
             PlayerPrefs.SetInt("LevelIndex", value);
             PlayerPrefs.Save();
         }
+    }
+    private void CheckLose()
+    {
+        if (BallsList.Count <= 0)
+            OnPlayerLose();
+    }
+    private void OnEnable()
+    {
+        PixelsManager.OnEndPixels += OnPlayerWin;
+    }
+    private void OnDisable()
+    {
+        PixelsManager.OnEndPixels -= OnPlayerWin;
     }
 }

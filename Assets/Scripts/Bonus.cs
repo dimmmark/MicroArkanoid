@@ -17,8 +17,8 @@ public abstract class Bonus : MonoBehaviour
     {
         if (collision.GetComponent<Platform>())
             Activate();
-        else if (collision.GetComponent<BoundBottom>())
-            Destroy(collision.gameObject);
+        //else if (collision.GetComponent<BoundBottom>())
+        //    Destroy(collision.gameObject);
     }
 
     protected virtual void Activate()

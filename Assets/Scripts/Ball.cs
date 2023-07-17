@@ -1,5 +1,4 @@
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class Ball : MonoBehaviour
 {
@@ -19,16 +18,6 @@ public class Ball : MonoBehaviour
         if (Game.Instance.CurrentState == State.Playing)
             LaunchBall();
     }
-
-    //private void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0) && Game.Instance.CurrentState == State.Start)
-    //    {
-    //        LaunchBall();
-
-    //    }
-        
-    //}
 
     private void FixedUpdate()
     {
