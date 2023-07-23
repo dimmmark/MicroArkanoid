@@ -17,7 +17,6 @@ public class Game : MonoBehaviour
     [SerializeField] private Vector3 _offset;
     private Ball _startBall;
     public List<Ball> BallsList = new List<Ball>();
-   // [SerializeField] private PixelsManager _pixelsManager;
     private void Awake()
     {
         if (Instance == null)

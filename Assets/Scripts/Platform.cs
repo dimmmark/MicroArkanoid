@@ -27,7 +27,7 @@ public class Platform : MonoBehaviour
     }
     public void ExpandPlatform()
     {
-        transform.localScale = new Vector3(transform.localScale.x +.25f, 1, 1);
+        transform.localScale = new Vector3(transform.localScale.x +.2f, 1, 1);
     }
     private void OnEnable()
     {

@@ -23,15 +23,18 @@ public class PixelsManager : MonoBehaviour
             {
                 Color color = _texture.GetPixel(x, y);
                 if (color.a < 0.5f) continue;
-               // color *= Random.Range(0.8f, 1.0f);
                 Vector3 position = transform.position + new Vector3(x * _pixelPrefab.transform.localScale.x
                     + 0.5f, y * _pixelPrefab.transform.localScale.y + .5f, 0) * _distanceBetweenPixels;
-                position += new Vector3(0, Random.Range(0.1f, 0.1f), 0);
-               // Vector3 euler = new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), Random.Range(-5f, 5f));
-
+                if(color.a >.5f && color.a < .9f )
+                {
+                    Pooler.Instance.SpawnFromPool("IronPixel", position, Quaternion.identity);
+                }
+                else
+                {
                 Pixel pixel = Pooler.Instance.SpawnFromPool("Pixel", position, Quaternion.identity).GetComponent<Pixel>();
                 pixel.SetColor(color);
                 _pixelList.Add(pixel);
+                }
             }
         }
     }

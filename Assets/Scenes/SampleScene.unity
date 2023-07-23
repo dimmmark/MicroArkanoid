@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pixelPrefab: {fileID: 5213479680597568737, guid: 391a10d6dbabd474eb2e8bcb79160bc7, type: 3}
   _textures:
-  - {fileID: 2800000, guid: 56c01a2249e9363498c8ea7056c96573, type: 3}
-  _texture: {fileID: 2800000, guid: 56c01a2249e9363498c8ea7056c96573, type: 3}
+  - {fileID: 2800000, guid: 58eca0a4d141ea34994f639c91840270, type: 3}
+  _texture: {fileID: 0}
   _distanceBetweenPixels: 1.325
   _pixelList: []
 --- !u!4 &96666562
@@ -1090,10 +1090,13 @@ MonoBehaviour:
   pools:
   - tag: Pixel
     Prefab: {fileID: 7767447932633579031, guid: 391a10d6dbabd474eb2e8bcb79160bc7, type: 3}
-    Size: 500
+    Size: 600
   - tag: Ball
-    Prefab: {fileID: 2615121653197019436, guid: 81942a898195a1c4c8b0af87a6c9b5a9, type: 3}
+    Prefab: {fileID: 7901897012521938414, guid: 81942a898195a1c4c8b0af87a6c9b5a9, type: 3}
     Size: 300
+  - tag: IronPixel
+    Prefab: {fileID: 7767447932633579031, guid: 3c0f48121828d8b4dbbf3e228e996ca2, type: 3}
+    Size: 200
 --- !u!4 &1862669075
 Transform:
   m_ObjectHideFlags: 0
