@@ -8,14 +8,14 @@ public class PixelsManager : MonoBehaviour
     [SerializeField] Texture2D[] _textures;
     [SerializeField] Texture2D _texture;
     [SerializeField] float _distanceBetweenPixels;
-    [SerializeField] List<Pixel> _pixelList = new List<Pixel>();
+    private List<Pixel> _pixelList = new List<Pixel>();
     private float _numberOfPixelsOnStart;
     public static event System.Action OnEndPixels;
     private void Start()
     {
-       Invoke(nameof( MakeImage),.1f);
+        //Invoke(nameof(MakeImage), .25f);
     }
-    private void MakeImage()
+    public void MakeImage()
     {
         for (int y = 0; y < GetTextureFromArray().width; y++)
         {
@@ -47,8 +47,8 @@ public class PixelsManager : MonoBehaviour
     }
     private Texture2D GetTextureFromArray()
     {
-        // _texture = _textures[GameStates.Instance.LevelIndex];
-        _texture = _textures[0];
+        _texture = _textures[Game.Instance.LevelIndex];
+        //_texture = _textures[0];
         return _texture;
     }
     private void OnEnable()

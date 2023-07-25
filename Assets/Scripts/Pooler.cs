@@ -20,9 +20,7 @@ public class Pooler : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
-    }
-    private void Start()
-    {
+    
         poolDictinary = new Dictionary<string, Queue<GameObject>>();
         foreach (Pool pool in pools)
         {

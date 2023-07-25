@@ -45,7 +45,7 @@ public class BonusManager : MonoBehaviour
         if (Game.Instance.BallsList.Count <= 3)
         {
             _randomInt = Random.Range(1, 6);
-            Debug.Log(_randomInt);
+           // Debug.Log(_randomInt);
             if (_randomInt == 2)
             {
                 Instantiate(_bonusArray[Random.Range(0, _bonusArray.Length)], pixel.transform.position, Quaternion.identity);
@@ -54,19 +54,19 @@ public class BonusManager : MonoBehaviour
         else if (Game.Instance.BallsList.Count > 3 && Game.Instance.BallsList.Count <= 21)
         {
             _randomInt = Random.Range(1, 21);
-            Debug.Log(_randomInt);
+           // Debug.Log(_randomInt);
             if (_randomInt == 2)
             {
-                Instantiate(_bonusArray[Random.Range(0, _bonusArray.Length)], pixel.transform.position, Quaternion.identity);
+                Instantiate(_bonusArray[Random.Range(1, _bonusArray.Length)], pixel.transform.position, Quaternion.identity);
             }
         }
         else if (Game.Instance.BallsList.Count > 21 && Game.Instance.BallsList.Count <= 100)
         {
             _randomInt = Random.Range(1, 51);
-            Debug.Log(_randomInt);
+           // Debug.Log(_randomInt);
             if (_randomInt == 2)
             {
-                Instantiate(_bonusArray[Random.Range(0, _bonusArray.Length)], pixel.transform.position, Quaternion.identity);
+                Instantiate(_bonusArray[Random.Range(4, _bonusArray.Length)], pixel.transform.position, Quaternion.identity);
             }
         }
     }
