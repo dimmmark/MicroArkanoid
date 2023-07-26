@@ -21,6 +21,8 @@ public class Game : MonoBehaviour
     [HideInInspector] public List<Ball> BallsList = new List<Ball>();
     [SerializeField] private UI _ui;
     [SerializeField] private PixelsManager _pixelsManager;
+    public static event System.Action<int> OnBallsChanged;
+    [SerializeField] private int _maxBalls = 600;
     private void Awake()
     {
         if (Instance == null)
@@ -43,6 +45,7 @@ public class Game : MonoBehaviour
          Ball newBall = Pooler.Instance.SpawnFromPool("Ball", _platform.transform.position + _offset, Quaternion.identity).GetComponent<Ball>();
        // Ball newBall = LeanPool.Spawn(_ball, _platform.transform.position + _offset, Quaternion.identity);
          BallsList.Add(newBall);
+        OnBallsChanged?.Invoke(BallsList.Count);
         if (CurrentState == State.Start)
             _startBall = newBall;
     }
@@ -54,16 +57,20 @@ public class Game : MonoBehaviour
         {
             for (int j = 0; j < 2; j++)
             {
+                if (BallsList.Count == _maxBalls - 1) return;
+
                 Ball newBall = Pooler.Instance.SpawnFromPool("Ball", ball.transform.position, Quaternion.identity).GetComponent<Ball>();
                 newBalls.Add(newBall);
             }
         }
 
         BallsList.AddRange(newBalls);
+        OnBallsChanged?.Invoke(BallsList.Count);
     }
     public void RemoveOneBall(Ball ball)
     {
         BallsList.Remove(ball);
+        OnBallsChanged?.Invoke(BallsList.Count);
         CheckLose();
     }
 
@@ -90,12 +97,14 @@ public class Game : MonoBehaviour
     }
     public void OnPlayerInMenu()
     {
+        Time.timeScale = 0;
         CurrentState = State.Menu;
         Debug.Log(CurrentState.ToString());
     }
 
     public void OnPlayerInGame()
     {
+        Time.timeScale = 1;
         CurrentState = State.Playing;
         Debug.Log(CurrentState.ToString());
         if (_startBall)
@@ -105,6 +114,7 @@ public class Game : MonoBehaviour
 
     public void OnPlayerWin()
     {
+        SoundManager.Instance.Play("Win");
         CurrentState = State.Win;
         LevelIndex++;
         _ui.ShowWinScrene();
@@ -114,6 +124,7 @@ public class Game : MonoBehaviour
     }
     public void OnPlayerLose()
     {
+        SoundManager.Instance.Play("Lose");
         CurrentState = State.Lose;
         _ui.ShowLoseScrene();
         Time.timeScale = 0;

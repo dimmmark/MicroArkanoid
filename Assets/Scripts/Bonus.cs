@@ -16,6 +16,7 @@ public abstract class Bonus : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Platform>())
+           // SoundManager.Instance.Play("Bonus");
             Activate();
         //else if (collision.GetComponent<BoundBottom>())
         //    Destroy(collision.gameObject);
@@ -23,6 +24,6 @@ public abstract class Bonus : MonoBehaviour
 
     protected virtual void Activate()
     {
-
+        SoundManager.Instance.Play("Bonus");
     }
 }
