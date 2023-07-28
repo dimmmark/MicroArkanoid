@@ -76,8 +76,8 @@ public class Ball : MonoBehaviour
         }
          if ( collision.gameObject.GetComponent<IronPixel>())
         {
-
-            //_direction = Vector2.Reflect(_direction, _vectorAtract).normalized;
+           // SoundManager.Instance.Play("IronHit");
+            
             if (_frames > 1)
             {
                 if (_vectorAtract.x == 0)

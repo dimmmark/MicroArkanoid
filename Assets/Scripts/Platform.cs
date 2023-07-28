@@ -20,7 +20,7 @@ public class Platform : MonoBehaviour
         {
             float delta = Input.mousePosition.x - _oldMouseX;
             _oldMouseX = Input.mousePosition.x;
-            _xPosition += delta * _sencetivity / Screen.width;
+            _xPosition += delta * _sencetivity ;
             _xPosition = Mathf.Clamp(_xPosition, -_maxXPosition, _maxXPosition);
             transform.position = new Vector3(_xPosition, transform.position.y, transform.position.z);
         }

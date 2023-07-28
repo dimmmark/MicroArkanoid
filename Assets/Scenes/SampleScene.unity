@@ -289,9 +289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pixelPrefab: {fileID: 5213479680597568737, guid: 391a10d6dbabd474eb2e8bcb79160bc7, type: 3}
   _textures:
-  - {fileID: 2800000, guid: d35834b85f7b350489efa2b9147a352d, type: 3}
+  - {fileID: 2800000, guid: 517830118e2bf0c4ea61ab49f8417c92, type: 3}
   - {fileID: 2800000, guid: 7b5cd657312cf5745b4972c8e6fbffa2, type: 3}
-  - {fileID: 2800000, guid: 623f340ddc58c6d43988d0da3a416c3f, type: 3}
   _texture: {fileID: 0}
   _distanceBetweenPixels: 1.325
 --- !u!4 &96666562
@@ -420,8 +419,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 27.9, y: -26.400024}
-  m_SizeDelta: {x: 31.3, y: 3.3}
+  m_AnchoredPosition: {x: 32.1, y: -26.400024}
+  m_SizeDelta: {x: 39.88, y: 3.3}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &109083201
 MonoBehaviour:
@@ -3590,9 +3589,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
   - name: Hit
-    Clip: {fileID: 8300000, guid: b69107ae383841a4f9be8e7fc0f22ec9, type: 3}
+    Clip: {fileID: 8300000, guid: 79d40dcbe00f3ee4aa717c9d5a8d85fa, type: 3}
     Volume: 0.5
-    Pitch: 0.64
+    Pitch: 0.98
     Loop: 0
     Source: {fileID: 0}
   - name: Lose
@@ -3610,6 +3609,12 @@ MonoBehaviour:
   - name: Bonus
     Clip: {fileID: 8300000, guid: f6139428360fd6b468e44ec19a56521a, type: 3}
     Volume: 0.5
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - name: IronHit
+    Clip: {fileID: 8300000, guid: 563608b6c72aa5f41abf4f5d1ff47f51, type: 3}
+    Volume: 0.18
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
@@ -4265,7 +4270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f057e4875f3fb469028903eca9c44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sencetivity: 51
+  _sencetivity: 0.1
   _maxXPosition: 24
 --- !u!61 &1883654447
 BoxCollider2D:

@@ -42,8 +42,8 @@ public class Game : MonoBehaviour
 
     public void SetBall()
     {
-         Ball newBall = Pooler.Instance.SpawnFromPool("Ball", _platform.transform.position + _offset, Quaternion.identity).GetComponent<Ball>();
-       // Ball newBall = LeanPool.Spawn(_ball, _platform.transform.position + _offset, Quaternion.identity);
+        if (BallsList.Count >= _maxBalls) return;
+            Ball newBall = Pooler.Instance.SpawnFromPool("Ball", _platform.transform.position + _offset, Quaternion.identity).GetComponent<Ball>();
          BallsList.Add(newBall);
         OnBallsChanged?.Invoke(BallsList.Count);
         if (CurrentState == State.Start)
@@ -57,7 +57,7 @@ public class Game : MonoBehaviour
         {
             for (int j = 0; j < 2; j++)
             {
-                if (BallsList.Count == _maxBalls - 1) return;
+                if (BallsList.Count >= _maxBalls ) break;
 
                 Ball newBall = Pooler.Instance.SpawnFromPool("Ball", ball.transform.position, Quaternion.identity).GetComponent<Ball>();
                 newBalls.Add(newBall);
